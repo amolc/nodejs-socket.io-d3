@@ -2,7 +2,7 @@ var app = require('http').createServer(handler),
     io = require('socket.io').listen(app), //require('socket.io').listen(80);
     fs = require('fs');
 
-app.listen(99);
+app.listen(9900);
 
 function handler(req, res) {
     console.log('handler')
@@ -22,7 +22,7 @@ function handler(req, res) {
 io.sockets.on('connection', function(socket) {
     console.log('handle connection');
 
-    var periodInMilliseconds = 400;
+    var periodInMilliseconds = 5000;
     var timeoutId = -1;
 
     /**
